@@ -2402,15 +2402,17 @@ public class ConlluEditor {
                     bw.write(cfile.toString());
                     bw.close();
                     changesSinceSave = 0;
-                    git.add().addFilepattern(filepathInGit.toString()).call();
-                    if (modWord == null) {
-                        git.commit().setMessage(String.format("saving %s sentence: %d (%s)", outfilename, currentSentenceId + 1, editinfo)).call();
-                    } else {
-                        //String sentid = "";
-                        //if ()
-                        git.commit().setMessage(String.format("modification: %s sentence %d, word: %d (%s)", outfilename, currentSentenceId + 1, modWord.getId(), editinfo)).call();
-                    }
-                    System.err.printf("File '%s' committed\n", filepathInGit);
+                    // VB: don't commit the file (but still save it!)
+                    // git.add().addFilepattern(filepathInGit.toString()).call();
+                    // if (modWord == null) {
+                    //     git.commit().setMessage(String.format("saving %s sentence: %d (%s)", outfilename, currentSentenceId + 1, editinfo)).call();
+                    // } else {
+                    //     //String sentid = "";
+                    //     //if ()
+                    //     git.commit().setMessage(String.format("modification: %s sentence %d, word: %d (%s)", outfilename, currentSentenceId + 1, modWord.getId(), editinfo)).call();
+                    // }
+                    // System.err.printf("File '%s' committed\n", filepathInGit);
+                    System.err.printf("File saved\n");
                     return outfilename.toString();
 
                 }
