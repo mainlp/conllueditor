@@ -1466,6 +1466,8 @@ function ModifyTree(evt) {
                         var potential = "";
                         if (uposs[0] == "DET")
                             potential = "det";
+                        else if (uposs[0] == "AUX" && uposs[1] == "VERB") // VB: added case
+                            potential = "aux";
                         else if (uposs[0] == "AUX")
                             potential = "cop";
                         else if (uposs[0] == "ADP")
@@ -1481,7 +1483,7 @@ function ModifyTree(evt) {
                         else if (uposs[0] == "ADV")
                             potential = "advmod";
                         else if (uposs[0] == "PART") // yn dda
-                            potential = "case:pred";
+                            potential = "advmod"; // VB: changed from case:pred; match DE guidelines
 
                         // open deprel edit (for basic or enhanced deps)
                         if (editing_enhanced) {
