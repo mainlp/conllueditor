@@ -498,7 +498,6 @@ input {
 /** redefine font for thie <pre></pre> */
 #commentfield {
     font-family: inherit;
-    margin-left: 10px; /* VB */
 }
 
 /* (xe)latex logos */

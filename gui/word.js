@@ -189,7 +189,7 @@ function drawWord(item, x, hor, levelinit, curid, svg, gold, incorrectwords) {
     }
     rect.setAttribute('y', levelinit);
     rect.setAttribute('height', level - levelinit + 6);
-    rect.setAttribute('stroke', 'black');
+    rect.setAttribute('stroke', 'grey'); // VB change col
     rect.setAttribute('fill', '#fffff4'); // only needed for svg download, since the download does not add depgraph.css
     rect.setAttribute("rx", "5");
     rect.setAttribute("ry", "25");
