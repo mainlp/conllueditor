@@ -1500,8 +1500,11 @@ function ModifyTree(evt) {
                         } else {
                             $("#chead").text(clickedNodes[1]);
                             $("#cdep").text(clickedNodes[0]);
+                            $("#cheadpos").text(uposs[1]); // VB: new
+                            $("#cdeppos").text(uposs[0]); // VB: new
                             $("#cdeprel").val(potential);
-                            $("#deprelEdit").modal()
+                            $("#deprelEdit").modal();
+                            window.setTimeout(() => $("#cdeprel").focus(), 0); // VB: new
                         }
 
 

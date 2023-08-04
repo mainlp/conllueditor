@@ -97,7 +97,7 @@ function drawWord(item, x, hor, levelinit, curid, svg, gold, incorrectwords) {
     fs = parseFloat(window.getComputedStyle(lemmatext).getPropertyValue('font-size'));
     if (!fs)
         fs = 10; // for chrome
-    level += fs * 1.2;
+    // level += fs * 1.2; // VB hide the lemma from the GUI
     if (useitalic)
         lemmatext.setAttribute("font-style", "italic");
     lemmatext.setAttribute('x', x);

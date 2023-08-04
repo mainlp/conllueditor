@@ -102,6 +102,7 @@ ul.ui-autocomplete {
 .wordlemma {
     /*font-family: Sans, Arial, Helvetica;*/
     font-size: 12px;
+    display: none; /* VB */
 }
 
 .wordid {
