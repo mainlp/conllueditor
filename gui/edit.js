@@ -1464,12 +1464,14 @@ function ModifyTree(evt) {
                     if (!makeRoot
                             && (editing_enhanced || deprels[0] == "" || deprels[0] == "root" || deprels[0] == "undefined" || deprels[0] == undefined)) {
                         var potential = "";
-                        if (uposs[0] == "DET")
+                        if (uposs[0] == "DET" && uposs[2] != "VERB") // VB: added second part of condition
                             potential = "det";
-                        else if (uposs[0] == "AUX" && uposs[1] == "VERB") // VB: added case
+                        else if (uposs[0] == "AUX" && uposs[1] == "VERB") // VB: new
                             potential = "aux";
                         else if (uposs[0] == "AUX")
                             potential = "cop";
+                        else if (uposs[0] == "ADP" && uposs[1] == "VERB") // VB: new
+                            potential = "compound:prt";
                         else if (uposs[0] == "ADP")
                             potential = "case";
                         else if (uposs[0] == "PUNCT")
@@ -1482,6 +1484,10 @@ function ModifyTree(evt) {
                             potential = "amod";
                         else if (uposs[0] == "ADV")
                             potential = "advmod";
+                        else if (uposs[0] == "PROPN" && uposs[1] == "PROPN") // VB: new
+                            potential = "flat";
+                        else if (uposs[0] == "INTJ") // VB: new
+                            potential = "discourse";
                         else if (uposs[0] == "PART") // yn dda
                             potential = "advmod"; // VB: changed from case:pred; match DE guidelines
 
