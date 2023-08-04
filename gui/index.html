@@ -106,7 +106,7 @@
                         <span class="contain"><button class="editbuttons mybutton" id="next">&nbsp;</button> <!--  &gt;&gt; --></span>
                         <span class="contain"><button class="editbuttons mybutton" id="last">&nbsp;</button> <!--  &gt;| --></span>
 
-                        <button class="mycheck mybutton" id="feat2" title="show morpho-syntactic features">features</button>
+                        <!-- <button class="mycheck mybutton" id="feat2" title="show morpho-syntactic features">features</button> -->
                         <button class="mycheck mybutton" id="misc2" title="show contents of MISC column">misc</button>
                         <!--button class="mycheck mybutton" id="flat2">flat graph</button-->
                         <span class="oomybutton dewis">
@@ -116,7 +116,7 @@
                             <option value="table">table view</option>
                         </select>
                         </span>
-                        <button class="mycheck mybutton" id="r2l" title="activate for sentennces in Arabic or Hebrew script">right to left</button>
+                        <!-- <button class="mycheck mybutton" id="r2l" title="activate for sentennces in Arabic or Hebrew script">right to left</button> -->
                         <!--button class="mycheck mybutton" id="extracols" title="show contents of columns > 10">extra cols</button-->
 
                         <button class ="editbuttons mybutton editmode" title="save file before min edits are reached (option --saveAfter)" id="save">save changes</button>
@@ -140,22 +140,22 @@
                         <!--/span-->
                         <!--textarea style="resize: horizontal;" cols="10" rows="1" class="inputfield searchfield" placeholder="find form (string)" title="string (with or without &quot;)" type="text" id="word" value=""></textarea-->
                         <span class="contain"><button class="editbuttons mybutton go" id="findword">&nbsp;</button></span>
-
+<!-- 
                         <input class="inputfield searchfield" placeholder="find lemma (regex/...)" title="regex[/regex/...]" type="text" id="lemma" value="">
                         <span class="contain"><button class="editbuttons mybutton go" id="findlemma">&nbsp;</button></span>
-
+ -->
                         <input class="inputfield searchfield" placeholder="find upos (regex/...)" title="regex[/regex/...]" type="text" id="upos" value="">
                         <span class="contain"><button class="editbuttons mybutton go" id="findupos">&nbsp;</button></span>
-
+<!-- 
                         <input class="inputfield searchfield" placeholder="find xpos (regex/...)" title="regex[/regex/...]" type="text" id="xpos" value="">
                         <span class="contain"><button class="editbuttons mybutton go" id="findxpos">&nbsp;</button></span>
-
+ -->
                         <input class="inputfield searchfield" placeholder="find deprel (regex/...)" title="regex of deprels (separated by &gt; or &lt; in order to find a branch)" type="text" id="deprel" value="">
                         <span class="contain"><button class="editbuttons mybutton go" id="finddeprel">&nbsp;</button></span>
 
-                        <input class="inputfield searchfield" placeholder="find feature (name:regex/...)" title="name:regex of feature" type="text" id="featureval" value="">
+  <!--                       <input class="inputfield searchfield" placeholder="find feature (name:regex/...)" title="name:regex of feature" type="text" id="featureval" value="">
                         <span class="contain"><button class="editbuttons mybutton go" id="findfeature">&nbsp;</button></span>
-
+ -->
                         <span class="contain"><button class="mybutton mycheck" title="search backwards" id="backwards">&nbsp;</button></span>
                     </td>
                 </tr>
@@ -170,7 +170,7 @@
                         <input class="inputfield searchfield" placeholder="find sent-id (regex)" title="regex" type="text" id="sentenceid" value="">
                         <span class="contain"><button class="editbuttons mybutton go" id="findsentid">&nbsp;</button></span>
 
-                        <span class="contain"><button class="mybutton mycheck" title="clear sall earch fields" id="clear">&nbsp;</button></span>
+                        <span class="contain"><button class="mybutton mycheck" title="clear all search fields" id="clear">&nbsp;</button></span>
 
                         <button class="mycheck mybutton onlywithenhanced" id="bie">show basic in enhanced</button>
                         <button class="mycheck mybutton onlywithenhanced" id="edit_ed">edit enhanced deps</button>
@@ -194,11 +194,11 @@
                 <tr class="search">
                     <td colspan="1" -->
                         <button class ="mybutton onlyWithTree" id="valid">validation</button>
-                        <a class="onlyWithTree" id="a2" download="arbre.svg" type="image/svg+xml"><button class="mybutton">download image</button></a>
+                        <!-- <a class="onlyWithTree" id="a2" download="arbre.svg" type="image/svg+xml"><button class="mybutton">download image</button></a> -->
                         <button class ="onlyWithTree mybutton" id="latex"><span class="latex">L<sup>a</sup>T<sub>e</sub>X</span></button>
                         <button class ="onlyWithTree mybutton" id="conllu">CoNLL-U</button>
-                        <button class ="onlyWithTree mybutton" id="sdparse">SD-Parse</button>
-                        <button class ="onlyWithTree mybutton" id="json">JSON (Spacy)</button>
+<!--                         <button class ="onlyWithTree mybutton" id="sdparse">SD-Parse</button>
+                        <button class ="onlyWithTree mybutton" id="json">JSON (Spacy)</button> -->
                         <button class ="onlyWithTree mybutton" id="editmetadata">edit metadata</button>
                     </td>
                 </tr>
