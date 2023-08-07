@@ -2203,6 +2203,17 @@ $(document).ready(function () {
         $('#deprelEdit').modal('hide');
     });
 
+    // VB
+    // remove basic dep relation
+    $('#deldeprel').click(function () {
+        conllword = conllwords[$("#cdep").text()];
+
+        if (conllword.deprel != $("#cdeprel").val()) {
+            sendmodifs({"cmd": "mod " + $("#cdep").text() + " " + $("#chead").text() + " " + $("#cdeprel").val()});
+        }
+        $('#deprelEdit').modal('hide');
+    });
+
     // add/modify enhanced dep relation
     $('#savedeprelen').click(function () {
         conllword = conllwords[$("#cdepen").text()];

@@ -124,11 +124,29 @@
                         <!--button class="mycheck mybutton" id="extracols" title="show contents of columns > 10">extra cols</button-->
 
                         <button class ="editbuttons mybutton editmode" title="save file before min edits are reached (option --saveAfter)" id="save">save changes</button>
-                        <span class="spacer"/> <!-- VB -->
+                        
+                        <!--button class="mybutton" id="act_search" style="width:130" onmousedown="ToggleSearch();" title="hide/show search fields">toggle search modes</button-->
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="1">
+                        <!-- VB moved to next row -->
                         <button type="button" class="help mybutton" data-toggle="modal" data-target="#helpModal">help</button>
                         <span class="spacer"/> <!-- VB -->
 
-                        <!--button class="mybutton" id="act_search" style="width:130" onmousedown="ToggleSearch();" title="hide/show search fields">toggle search modes</button-->
+                        <!-- VB insert own guides -->
+                        <form action="https://docs.google.com/document/d/1SlA0Eprswn11bAheTWsHV5QDHBry1EzdjzvEEZvD_dU/edit" method="get" target="_blank" style="display: inline;">
+                            <button type="submit"  class="help mybutton">annotation doc</button>
+                        </form>
+                        <span class="spacer"/>
+                        <button type="button" class="help mybutton" data-toggle="modal" data-target="#deprelCheatsheet">deprel cheatsheet</button>
+                    </td>
+                </tr>
+
+                <tr class="search">
+                    <td colspan="1">
+                        <!-- VB moved to next row -->
                         <span class="dewisl dewis">
                         <select id="searchmode">
                             <option value="simple" selected>simple search</option>
@@ -136,11 +154,8 @@
                             <option value="grew">grew match</option>
                             <option value="hide">hide search</option>
                         </select>
-                    </td>
-                </tr>
-
-                <tr class="search">
-                    <td colspan="1">
+                    </span>
+                        <span class="spacer"/> <!-- VB -->
                         <!--span class="resizable-input"-->
                             <input class="inputfield searchfield" placeholder="find form (string)" title="string (with or without &quot;)" type="text" id="word" value="">
                         <!--/span-->
@@ -305,6 +320,22 @@
 
 
         <!-- the following are the dialogue/help popups -->
+
+        <!-- VB: cheatsheet -->
+        <div class="modal" id="deprelCheatsheet" tabindex="-1" role="dialog" aria-labelledby="deprelCheatsheetLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="helpModalLabel">Dependency relations cheatsheet</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="modal" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
@@ -333,18 +364,20 @@
                         the <span class="userinputdoc">compose <i>id length</i></span> command allows to add new MW tokens.
                         <br><br>or use a command and hit the <span class="buttondoc">modify</span> button (replace the parts in <span class="userinputdoc"><i>italic</i></span> with the the new values):
 
+                        <!-- VB comment out irrelevant parts -->
+
                         <!-- class="helpstyle" ici pour mettre les meme font-size (jquery-ui fait ça différemment -->
                         <table border ="0" class="bhelpstyle">
                             <tr><td>&bull; <span class="userinputdoc"><i>dep_id newheadid</i></span> [<span class="userinputdoc"><i>deprel</i></span>]</td>
                                 <td>attach <i>dep_id</i> to <i>newheadid</i> with the relation <i>deprel</i></td>
                             </tr>
-                            <tr><td>&bull; <span class="userinputdoc">xpos <i>dep_id XPOS</i></span></td>
+                            <!-- <tr><td>&bull; <span class="userinputdoc">xpos <i>dep_id XPOS</i></span></td>
                                 <td>set xpos of word <i>id</i> to XPOS</td>
-                            </tr>
+                            </tr> -->
                             <tr><td>&bull; <span class="userinputdoc">upos <i>dep_id UPOS</i></span></td>
                                 <td>set upos of word <i>id</i> to UPOS</td>
                             </tr>
-                            <tr><td>&bull; <span class="userinputdoc">lemma <i>dep_id LEMMA</i></span></td>
+                            <!-- <tr><td>&bull; <span class="userinputdoc">lemma <i>dep_id LEMMA</i></span></td>
                                 <td>modify lemma of word <i>id</i></td>
                             </tr>
                             <tr><td>&bull; <span class="userinputdoc">feat <i>dep_id feature=value,...</i></span></td>
@@ -357,7 +390,7 @@
 
                         <br>other commands for <span class="buttondoc">modify</span> (no graphical equivalent) :
 
-                        <table border ="0" class="bhelpstyle">
+                        <table border ="0" class="bhelpstyle"> -->
                             <tr><td width="440px">&bull; <span class="userinputdoc">split <i>id</i> [<i>splitpos</i>]</span></td> <td>split a word in two
                                     (it will be copied to a new node and attached to the same head). If <i>splitpos</i> is given the characters of Form and Lemma left of <i>splitpos</i> will
                                     remain in the original word, the rest will be the new word</td></tr>
@@ -395,11 +428,11 @@
                             <td valign="top"><table id="shortcuttableDEPL" border="0">
                             </table></td>
 
-                            <td valign="top"><table id="shortcuttableXPOS" border="0">
+                            <!-- <td valign="top"><table id="shortcuttableXPOS" border="0">
                             </table></td>
 
                             <td valign="top"><table id="shortcuttableFEATS" border="0">
-                            </table></td>
+                            </table></td> -->
 
                             <td valign="top"><table id="shortcuttableMISC" border="0">
                             </table></td>
@@ -428,21 +461,21 @@
 
 
                         <p><b>Modify comment</b> (shown underneath the sentence): click the comment.</p>
-                        <p>The <span class="buttondoc">download image</span> button downloads the current dependency tree as an <tt>.svg</tt> file. Use the following commands
+<!--                         <p>The <span class="buttondoc">download image</span> button downloads the current dependency tree as an <tt>.svg</tt> file. Use the following commands
                         to transform it into <tt>.pdf</tt> or <tt>.png</tt>:<br>
                         <span class="commandline">$ inkscape -A arbre.pdf arbre.svg</span><br>
                         <span class="commandline">$ inkscape -e arbre.png arbre.svg</span>
                         </p>
                         <p>In order to downlad the entire sentence in CoNLL-U, SD-Parser or
                             <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> (for tikz-dependencies),
-                            click the corresponding buttons)</p>
+                            click the corresponding buttons)</p> -->
 
                         <p>Changes can be undone/redone using the buttons
                             <img class="helptextbutton" style="width: 30px;" src="img/undo.svg"> and
                             <img class="helptextbutton" style="width: 30px;" src="img/redo.svg">.
                         The undo-memory is cleared when a new sentence is loaded</p>
 
-                        <h3>Editing enhanced dependencies</h3>
+                        <!-- <h3>Editing enhanced dependencies</h3>
                         Enhanced dependencies can be edited only in flat view mode. Activate the
                         <span class="buttondoc">edit enhanced dependencies</span> button. Like editing basic dependencies,
                         enhanced dependencies can be added by clicking on the dependant followed by clicking on the head.
@@ -458,7 +491,7 @@
                                 <td>add an enhanced dependency</td>
                             <tr><td>&bull; <span class="userinputdoc"><i>ed del dep_id newheadid</i></span> </td>
                                 <td>delete an enhanced dependency</td>
-                        </table>
+                        </table> -->
 
 
                         <h2>Searching</h2>
