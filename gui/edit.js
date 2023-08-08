@@ -1478,14 +1478,14 @@ function ModifyTree(evt) {
                             potential = "punct";
                         else if (uposs[0] == "CCONJ")
                             potential = "cc";
-                        else if (uposs[0] == "SCONJ")
+                        else if (uposs[0] == "SCONJ" && uposs[1] == "VERB") // VB: 2nd cond
                             potential = "mark";
                         else if (uposs[0] == "ADJ")
                             potential = "amod";
                         else if (uposs[0] == "ADV")
                             potential = "advmod";
-                        else if (uposs[0] == "PROPN" && uposs[1] == "PROPN") // VB: new
-                            potential = "flat";
+                        else if (uposs[0] == "NUM" && uposs[1] == "NOUN") // VB: new
+                            potential = "nummod";
                         else if (uposs[0] == "INTJ") // VB: new
                             potential = "discourse";
                         else if (uposs[0] == "PART") // yn dda
