@@ -2213,6 +2213,15 @@ $(document).ready(function () {
         $('#deprelEdit').modal('hide');
     });
 
+    // VB
+    // change order od basic dep relation
+    $('#invertdeprel').click(function () {
+        conllword = conllwords[$("#cdep").text()];
+        sendmodifs({"cmd": "mod " + $("#cdep").text() + " 0"});
+        sendmodifs({"cmd": "mod " + $("#chead").text() + " " + $("#cdep").text() + " " + $("#cdeprel").val()});
+        $('#deprelEdit').modal('hide');
+    });
+
     // add/modify enhanced dep relation
     $('#savedeprelen').click(function () {
         conllword = conllwords[$("#cdepen").text()];
