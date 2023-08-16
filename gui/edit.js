@@ -1528,6 +1528,8 @@ function ModifyTree(evt) {
             // update deprel
             $("#chead").text(id[1]);
             $("#cdep").text(id[2]);
+            $("#cheadpos").text(""); // VB: reset -- figure out how to actually look up the value
+            $("#cdeppos").text(""); // VB: reset -- figure out how to actually look up the value
             $("#cdeprel").val(id[3]);
             //$("#depreledit").dialog("open");
             $("#deprelEdit").modal()
@@ -2207,10 +2209,7 @@ $(document).ready(function () {
     // remove basic dep relation
     $('#deldeprel').click(function () {
         conllword = conllwords[$("#cdep").text()];
-
-        if (conllword.deprel != $("#cdeprel").val()) {
-            sendmodifs({"cmd": "mod " + $("#cdep").text() + " " + $("#chead").text() + " " + $("#cdeprel").val()});
-        }
+        sendmodifs({"cmd": "mod " + $("#cdep").text() + " 0"});
         $('#deprelEdit').modal('hide');
     });
 
