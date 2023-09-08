@@ -977,6 +977,21 @@ function isElementInViewport(el) {
 }
 
 
+// VB: automatically continue to next token
+function goToNext() {
+    unhighlight();
+    var nextidx = +clickedNodes[0] + 1;
+    clickedNodes = [];
+    clickedNodes.push(nextidx);
+    console.log("Selecting next token: " + nextidx);
+    var nextbox = document.querySelectorAll('[id^="rect_' + nextidx + '_"]')[0];
+    try {
+        nextbox.setAttribute("class", nextbox.getAttribute("class") + " boxhighlight");
+    } catch (err) {
+        console.log("Reached the end of the sentence");
+    }
+}
+
 // process shortcuts: we catch keys hit in the editor. If a word is active, we try to apply
 let timeout = null;
 
@@ -1025,10 +1040,14 @@ $(window).on('keypress', function (evt) {
         sendmodifs({"cmd": "mod misc " + clickedNodes[0] + " " + "_"});
         unsetPShC();
         return;
+    } else if (evt.which == 46) { // . (vb)
+        goToNext();
+        return;
     } else if (clickedNodes.length == 0) {
         unsetPShC();
         return;
     } else {
+        console.log(evt)
 
         // Clear the timeout if it has already been set.
         // This will prevent the previous task from executing
@@ -1048,8 +1067,9 @@ $(window).on('keypress', function (evt) {
                 shortcutseq = "";
                 deprels = [];
                 uposs = [];
-                clickedNodes = [];
+                // clickedNodes = []; (vb) don't reset this (for .-ing)
                 unsetPShC();
+                goToNext(); // vb
                 return;
             }
 
@@ -1060,7 +1080,7 @@ $(window).on('keypress', function (evt) {
                 shortcutseq = "";
                 deprels = [];
                 uposs = [];
-                clickedNodes = [];
+                // clickedNodes = []; (vb)
                 unsetPShC();
                 return;
             }
@@ -1071,7 +1091,7 @@ $(window).on('keypress', function (evt) {
                 shortcutseq = "";
                 deprels = [];
                 uposs = [];
-                clickedNodes = [];
+                // clickedNodes = []; (vb)
                 unsetPShC();
                 return;
             }
@@ -1082,7 +1102,7 @@ $(window).on('keypress', function (evt) {
                 shortcutseq = "";
                 deprels = [];
                 uposs = [];
-                clickedNodes = [];
+                // clickedNodes = []; (vb)
                 unsetPShC();
                 return;
             }
@@ -1101,7 +1121,7 @@ $(window).on('keypress', function (evt) {
                 shortcutseq = "";
                 deprels = [];
                 uposs = [];
-                clickedNodes = [];
+                // clickedNodes = []; (vb)
                 unsetPShC();
                 return;
             }
