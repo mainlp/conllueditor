@@ -673,19 +673,20 @@ function switchSCHelp(on) {
 }
 
 function ToggleShortcutHelp() {
-    //console.log("SC", showshortcathelp, more, lastmore);
-    if (showshortcathelp) {
-        // hide short cut help
-        switchSCHelp(false);
-        $("#searchmode").click();
-    } else {
-        // show short cut help (and hide Search)
-        switchSCHelp(true);
-        switchSearch(false);
-        switchSearchReplace(false);
-        switchSubtree(false);
-        switchGrewmatchReplace(false);
-    }
+    // VB: always show the shortcut help
+    // //console.log("SC", showshortcathelp, more, lastmore);
+    // if (showshortcathelp) {
+    //     // hide short cut help
+    //     switchSCHelp(false);
+    //     $("#searchmode").click();
+    // } else {
+    //     // show short cut help (and hide Search)
+    //     switchSCHelp(true);
+    //     switchSearch(false);
+    //     switchSearchReplace(false);
+    //     switchSubtree(false);
+    //     switchGrewmatchReplace(false);
+    // }
 }
 
 
